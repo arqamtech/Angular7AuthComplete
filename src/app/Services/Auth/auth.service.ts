@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from "@angular/fire/firestore";
 
+import { first } from 'rxjs/operators';
 
 
 
@@ -14,10 +15,14 @@ export class AuthService {
   constructor(
     private fireAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-  ) { }
+  ) {
+
+
+
+  }
 
   signIn = new FormGroup({
-    Eemail: new FormControl(""),
+    Email: new FormControl(""),
     Pass: new FormControl(""),
   });
 
@@ -28,16 +33,21 @@ export class AuthService {
   });
 
 
+  isLoggedIn() {
+    return this.fireAuth.authState.pipe(first())
+  }
+
+
   loginM(data) {
     return new Promise<any>((resolve, reject) => {
-      this.fireAuth.auth.signInWithEmailAndPassword(data.email, data.pass).then(res => { }, err => reject(err));
+      this.fireAuth.auth.signInWithEmailAndPassword(data.Email, data.Pass).then(res => { }, err => reject(err));
     });
   }
 
 
   signUpM(data) {
     return new Promise<any>((resolve, reject) => {
-      this.fireAuth.auth.createUserWithEmailAndPassword(data.email, data.pass).then(res => {
+      this.fireAuth.auth.createUserWithEmailAndPassword(data.Email, data.Pass).then(res => {
 
         this.firestore
           .collection(`Users`).doc(`${res.user.uid}`)

@@ -1,48 +1,54 @@
-<div class="card large">
+<div class="container">
+  <div class="row  section">
+    <div class="col s12 l6  offset-l3">
+      <div class="card large">
 
-  <div class="card-content center-align">
-    <span class="card-title section">Sign Up</span>
+        <div class="card-content center-align">
+          <span class="card-title section">Sign Up</span>
 
 
-    <form [formGroup]="this.authService.signUp">
+          <form [formGroup]="this.authService.signUp">
 
 
-      <div class="row">
-        <div class="input-field col s12 l8 offset-l2">
-          <input type="text" formControlName="Name">
-          <label for="name">Name</label>
+            <div class="row">
+              <div class="input-field col s12 l8 offset-l2">
+                <input type="text" formControlName="Name">
+                <label for="name">Name</label>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="input-field col s12 l8 offset-l2">
+                <input type="email" formControlName="Email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12 l8 offset-l2">
+                <input type="password" formControlName="Pass">
+                <label for="pass">Password</label>
+              </div>
+            </div>
+
+
+
+
+            <button class="waves-effect waves-light btn " (click)="onSubmit()">
+              Submit
+            </button>
+          </form>
+
+
+
+
+
         </div>
+
+
+
       </div>
-
-
-      <div class="row">
-        <div class="input-field col s12 l8 offset-l2">
-          <input type="email" formControlName="Email">
-          <label for="email">Email</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12 l8 offset-l2">
-          <input type="password" formControlName="Pass">
-          <label for="pass">Password</label>
-        </div>
-      </div>
-
-
-
-
-      <button class="waves-effect waves-light btn " (click)="onSubmit()">
-        Submit
-      </button>
-    </form>
-
-
-
-
-
+    </div>
   </div>
-
-
-
 </div>

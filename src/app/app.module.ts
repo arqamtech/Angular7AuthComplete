@@ -11,12 +11,15 @@ import { environment } from "src/environments/environment";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { AuthService } from './Services/Auth/auth.service';
+import { HomeComponent } from './MainPages/home/home.component';
+import { GetUserService } from './Services/User/getUser/get-user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,10 @@ import { AuthService } from './Services/Auth/auth.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    GetUserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

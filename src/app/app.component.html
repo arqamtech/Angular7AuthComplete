@@ -1,12 +1,12 @@
-<div class="container">
-    <div class="row  section">
-        <div class="col s12 l6  ">
-            <app-login></app-login>
-        </div>
-        <div class="col s12 l6  ">
-            <app-sign-up></app-sign-up>
-        </div>
-    </div>
-</div>
-
+<nav  >
+  <div class="nav-wrapper">
+    <a href="" class="brand-logo">Logo</a>
+    
+    <ul id="nav-mobile" *ngIf="!userId"  class="right hide-on-med-and-down">
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signUp">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+{{userId}}
 <router-outlet></router-outlet>
