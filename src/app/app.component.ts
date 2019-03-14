@@ -18,23 +18,14 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    this.doSomething();
+    this.getuser();
   }
 
-  user;
-  
-//   getCoffeeOrders = () =>
-//   this.getUsers
-//   .getUser().subscribe(res =(this.user = res));
-
-// );
-
-  doSomething() {
+  getuser() {
     this.authService.isLoggedIn().pipe(
       tap(user => {
         if (user) {
           this.userId = user.uid;
-          console.log(this.userId)
         }
       })
     )

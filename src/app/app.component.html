@@ -1,12 +1,11 @@
-<nav  >
+<nav>
   <div class="nav-wrapper">
     <a href="" class="brand-logo">Logo</a>
-    
-    <ul id="nav-mobile" *ngIf="!userId"  class="right hide-on-med-and-down">
+
+    <ul id="nav-mobile" *ngIf="!userId" class="right hide-on-med-and-down">
       <li><a href="/login">Login</a></li>
       <li><a href="/signUp">Sign Up</a></li>
     </ul>
   </div>
 </nav>
-{{userId}}
 <router-outlet></router-outlet>

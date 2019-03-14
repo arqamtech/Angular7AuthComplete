@@ -13,6 +13,9 @@ import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { AuthService } from './Services/Auth/auth.service';
 import { HomeComponent } from './MainPages/home/home.component';
 import { GetUserService } from './Services/User/getUser/get-user.service';
+import { ViewClientsComponent } from './Client/view-clients/view-clients.component';
+import { AddClientComponent } from './Client/add-client/add-client.component';
+import { ClientDetailComponent } from './Client/client-detail/client-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { GetUserService } from './Services/User/getUser/get-user.service';
     LoginComponent,
     SignUpComponent,
     HomeComponent,
+    ViewClientsComponent,
+    AddClientComponent,
+    ClientDetailComponent,
   ],
   imports: [
     BrowserModule,

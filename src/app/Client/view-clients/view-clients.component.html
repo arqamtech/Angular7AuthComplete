@@ -1,0 +1,49 @@
+<body>
+  <div class="container">
+
+    <div class="section">
+      <a href="newClient" class="waves-effect right waves-dark btn"><i class="material-icons left">add</i>Add Client</a>
+    </div>
+
+    <br>
+    <div class="section">
+      <div class="divider"></div>
+    </div>
+
+    <div class="right">
+      <i class="material-icons small">dehaze</i>
+      <i class="material-icons small">dashboard</i>
+    </div>
+
+    <br>
+
+    <div class="section">
+      <div class="divider"></div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col s12 l3" *ngFor="let c of clients">
+
+        <div class="card" [routerLink]="[ '/client',c.payload.doc.id]">
+
+          <div class="card-content">
+
+            <div class="card-title">
+              {{c.payload.doc.data().Name}}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</body>
